@@ -2,9 +2,9 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import telebot, smtplib, json, os, time
+from config import TOKEN as TOKEN
 
-MAX_EMAILS = 100 #عدد الايميلات حط تحت 10
-TOKEN = "8024299120:AAEGwlWPbXCHfStef0D3k_NKAbOZYHjk_rU"
+MAX_EMAILS = 100 
 bot = telebot.TeleBot(TOKEN)
 
 def load_users():
