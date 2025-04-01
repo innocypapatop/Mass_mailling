@@ -3,6 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import telebot, smtplib, json, os, time
 from config import TOKEN as TOKEN
+from config import SUDO
 
 MAX_EMAILS = 100 
 bot = telebot.TeleBot(TOKEN)
@@ -33,7 +34,7 @@ def save_emails(data):
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     users = load_users()
-    if str(message.from_user.id) in users or message.from_user.id == 6887657313: #ايديك
+    if str(message.from_user.id) in SUDO or message.from_user.id == 7507408570: #ايديك
         markup = InlineKeyboardMarkup()
         add_email_button = InlineKeyboardButton("add email", callback_data="add_email")
         send_email_button = InlineKeyboardButton("send emails", callback_data="send_email")
@@ -183,7 +184,7 @@ def handle_delete_email(call):
 
 @bot.message_handler(commands=['id'])
 def handle_id(message):
-    if message.from_user.id == 6887657313: #ايديك
+    if message.from_user.id == 7507408570: #ايديك
         bot.send_message(message.chat.id, "حسناً الان ارسل الايدي لتفعيله")
         bot.register_next_step_handler(message, get_user_id)
 
