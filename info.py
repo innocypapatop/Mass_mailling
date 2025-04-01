@@ -2,5 +2,7 @@ import os
 import time
 
 class Config(object):
-  TOKEN = os.environ.get("TOKEN", "")
-  SUDO = list(map(int, os.environ.get("SUDO", "7507408570,7335094257").split(",")))
+    # Pyrogram Client
+    TOKEN = os.environ.get("TOKEN", "8190350217:AAFPBQoEK96Dkg7ILHM9louqXLt6c8SOJUs") # ⚠️ Required
+    # Other Configs
+    SUDO = list(map(int, os.environ.get("SUDO", "7899610698 7538572906").split()))  # ⚠️ Required
