@@ -1,9 +1,6 @@
-import re
 import os
-from os import getenv
-from dotenv import load_dotenv
+import time
 
-load_dotenv()
-
-TOKEN = getenv("TOKEN", "")
-SUDO = list(map(getenv("SUDO", "7507408570,7335094257").split(",")))
+class Config(object):
+  TOKEN = os.environ.get("TOKEN", "")
+  SUDO = list(map(int, os.environ.get("SUDO", "7507408570,7335094257").split(",")))
