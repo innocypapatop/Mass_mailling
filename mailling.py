@@ -2,8 +2,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import telebot, smtplib, json, os, time
-import info
-from info import config
+import config
 from config import TOKEN as TOKEN
 from config import SUDO
 
